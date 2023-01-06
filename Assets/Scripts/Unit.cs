@@ -1,13 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using VContainer;
 
 public class Unit : MonoBehaviour
 {
+    [Inject] private GameManager gm;
+
     private UnitAnimationManager anim;
 
     private AIPath aiPath;
+    private float aiPathBaseMaxSpeed;
+    private float aiPathBaseRotationSpeed;
+    private float aiPathBaseSlowDownDistance;
 
     private bool isStopped;
 
@@ -16,11 +23,24 @@ public class Unit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gm.GameSpeedChanged += Gm_GameSpeedChanged;
+        
         anim = new UnitAnimationManager(this);
         TryGetComponent(out aiPath);
+        aiPathBaseMaxSpeed = aiPath.maxSpeed;
+        aiPathBaseRotationSpeed = aiPath.rotationSpeed;
+        aiPathBaseSlowDownDistance = aiPath.slowdownDistance;
 
         isStopped = false;
         anim.StopMoving();
+    }
+
+    private void Gm_GameSpeedChanged(object sender, float speed)
+    {
+        anim.ChangeSpeed(speed);
+        aiPath.maxSpeed = speed * aiPathBaseMaxSpeed;
+        aiPath.rotationSpeed = speed * aiPathBaseRotationSpeed;
+        aiPath.slowdownDistance = speed * aiPathBaseSlowDownDistance;
     }
 
     // Update is called once per frame
@@ -114,6 +134,11 @@ public class Unit : MonoBehaviour
         public void StartMineWork()
         {
             animator.SetBool("MineWork", true);
+        }
+
+        public void ChangeSpeed(float speed)
+        {
+            animator.speed = speed;
         }
     }
 }

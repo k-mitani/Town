@@ -5,9 +5,13 @@ using UnityEngine.InputSystem;
 using VContainer;
 using VContainer.Unity;
 
-public class Testing : ITickable
+public class Testing : ITickable, IStartable
 {
     [Inject] Pointer p;
+
+    public void Start()
+    {
+    }
 
     public void Tick()
     {
