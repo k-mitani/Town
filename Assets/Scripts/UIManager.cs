@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using VContainer;
 
 public class UIManager : MonoBehaviour
@@ -12,7 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI foodText;
     [SerializeField] private TextMeshProUGUI woodText;
     [SerializeField] private TextMeshProUGUI metalText;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +33,17 @@ public class UIManager : MonoBehaviour
             speedType == 2 ? 10 :
             speedType == 3 ? 100 : 1;
         gm.ChangeGameSpeed(speed);
+    }
+
+    public void OnClickBuildMode()
+    {
+        if (gm.MapMode == MapMode.Build)
+        {
+            gm.ChangeMapMode(MapMode.Select);
+        }
+        else
+        {
+            gm.ChangeMapMode(MapMode.Build);
+        }
     }
 }
