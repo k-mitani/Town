@@ -18,10 +18,10 @@ public class MessageDialog : Dialog
     protected override void Start()
     {
         base.Start();
-        okButton.onClick.AddListener(() => { Result = DialogResult.Ok; Close(); });
-        yesButton.onClick.AddListener(() => { Result = DialogResult.Yes; Close(); });
-        noButton.onClick.AddListener(() => { Result = DialogResult.No; Close(); });
-        cancelButton.onClick.AddListener(() => { Result = DialogResult.Cancel; Close(); });
+        okButton.onClick.AddListener(() => { Result = DialogResult.Ok; CloseCore(); });
+        yesButton.onClick.AddListener(() => { Result = DialogResult.Yes; CloseCore(); });
+        noButton.onClick.AddListener(() => { Result = DialogResult.No; CloseCore(); });
+        cancelButton.onClick.AddListener(() => { Result = DialogResult.Cancel; CloseCore(); });
     }
 
     public void Show(
@@ -59,12 +59,12 @@ public class MessageDialog : Dialog
             default:
                 break;
         }
-        base.Show(_ => onClosed?.Invoke(Result));
+        base.ShowCore(_ => onClosed?.Invoke(Result));
     }
 
-    protected override void Close()
+    protected override void CloseCore()
     {
-        base.Close();
+        base.CloseCore();
     }
 }
 

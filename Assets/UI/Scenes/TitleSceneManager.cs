@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class TitleSceneManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI version;
-    [SerializeField] private MessageDialog messageDialog;
+    [SerializeField] private DialogsManager dialogs;
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class TitleSceneManager : MonoBehaviour
 
     public void OnClickContinue()
     {
-        messageDialog.Show("ゲームを読み込みますか？", DialogButton.YesNo, res =>
+        dialogs.Show("ゲームを読み込みますか？", DialogButton.YesNo, res =>
         {
             if (res == DialogResult.Yes)
             {
@@ -36,13 +36,14 @@ public class TitleSceneManager : MonoBehaviour
 
     public void OnClickNewGame()
     {
+        dialogs.ShowScenarioList();
     }
 
     public void OnClickOptions()
     {
-        messageDialog.Show("メッセージテスト", DialogButton.YesNoCancel, res =>
+        dialogs.Show("メッセージテスト", DialogButton.YesNoCancel, res =>
         {
-            messageDialog.Show("結果: " + res);
+            dialogs.Show("結果: " + res);
         });
     }
 
@@ -56,7 +57,7 @@ public class TitleSceneManager : MonoBehaviour
 
     public void OnClickExitGame()
     {
-        messageDialog.Show("ゲームを終了しますか？", DialogButton.YesNo, res =>
+        dialogs.Show("ゲームを終了しますか？", DialogButton.YesNo, res =>
         {
             if (res == DialogResult.Yes)
             {

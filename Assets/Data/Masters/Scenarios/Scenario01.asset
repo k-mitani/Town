@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6181688db890a2c4dbe5674a217abbd5, type: 3}
+  m_Name: Scenario01
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: "\u30B7\u30CA\u30EA\u30AA1"
+  <ImagePath>k__BackingField: 
+  <Description>k__BackingField: aiueo
+  <MapSize>k__BackingField: "\u5927"
+  <Difficulty>k__BackingField: "\u666E\u901A"
+  <IsMilitaryMap>k__BackingField: 0

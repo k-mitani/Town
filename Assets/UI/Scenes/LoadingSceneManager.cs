@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,13 @@ using UnityEngine.UI;
 
 public class LoadingSceneManager : MonoBehaviour
 {
+    private static ScenarioMasterData LoadingTarget { get; set; }
+    internal static void LoadScene(ScenarioMasterData scenario)
+    {
+        LoadingTarget = scenario;
+        SceneManager.LoadScene("LoadingScene");
+    }
+
     [SerializeField] private Slider progress;
     [SerializeField] private TextMeshProUGUI finishText;
 

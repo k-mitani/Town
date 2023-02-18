@@ -13,16 +13,16 @@ public class Dialog : MonoBehaviour
 
     protected virtual void Start()
     {
-        if (closeButton != null) closeButton.onClick.AddListener(Close);
+        if (closeButton != null) closeButton.onClick.AddListener(CloseCore);
     }
 
-    protected virtual void Show(ClosedHandler onClosed = null)
+    protected virtual void ShowCore(ClosedHandler onClosed = null)
     {
         this.onClosed = onClosed;
         gameObject.SetActive(true);
     }
 
-    protected virtual void Close()
+    protected virtual void CloseCore()
     {
         gameObject.SetActive(false);
         onClosed?.Invoke(this);
