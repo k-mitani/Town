@@ -1,0 +1,7 @@
+root = true
+
+
+[*.{cs}]
+# to fix vs behavior
+charset = utf-8
+indent_size = 4
