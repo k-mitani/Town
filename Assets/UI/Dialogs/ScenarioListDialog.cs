@@ -8,7 +8,7 @@ public class ScenarioListDialog : Dialog
 {
     public void Show(ClosedHandler onClosed = null)
     {
-        base.ShowCore(onClosed);
+        ShowCore(onClosed);
     }
 
     public void Close()
