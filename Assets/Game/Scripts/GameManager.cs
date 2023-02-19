@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         {
             currentTickInterval = 0;
 
-            // ŠÔ‚ği‚ß‚éB
+            // æ™‚é–“ã‚’é€²ã‚ã‚‹ã€‚
             current = current.AddMinutes(1);
 
             TimeChanged?.Invoke(this, current);

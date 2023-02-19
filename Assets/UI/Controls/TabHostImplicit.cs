@@ -30,22 +30,22 @@ public class TabHostImplicit : MonoBehaviour
     {
         var children = Util.GetChildren(transform);
 
-        // ƒ^ƒuƒ{ƒ^ƒ“‚ğæ“¾‚·‚éB
+        // ã‚¿ãƒ–ãƒœã‚¿ãƒ³ã‚’å–å¾—ã™ã‚‹ã€‚
         var tabButtonsParent = children.FirstOrDefault(c => c.name.Equals("Tabs"));
         if (tabButtonsParent == null) tabButtonsParent = children[0];
         tabButtons = tabButtonsParent.GetComponentsInChildren<Button>();
 
-        // ƒ^ƒuƒRƒ“ƒeƒ“ƒg‚ğæ“¾‚·‚éB
+        // ã‚¿ãƒ–ã‚³ãƒ³ãƒ†ãƒ³ãƒˆã‚’å–å¾—ã™ã‚‹ã€‚
         tabContents = children.Except(new[] { tabButtonsParent }).ToArray();
 
-        // ƒ^ƒuƒ{ƒ^ƒ“‚ÌƒNƒŠƒbƒNƒCƒxƒ“ƒg‚ğİ’è‚·‚éB
+        // ã‚¿ãƒ–ãƒœã‚¿ãƒ³ã®ã‚¯ãƒªãƒƒã‚¯ã‚¤ãƒ™ãƒ³ãƒˆã‚’è¨­å®šã™ã‚‹ã€‚
         for (int i = 0; i < tabButtons.Length; i++)
         {
             var ii = i;
             tabButtons[i].onClick.AddListener(() => TabIndex = ii);
         }
 
-        // ‰Šúƒ^ƒu‚ğ•\¦‚·‚éB
+        // åˆæœŸã‚¿ãƒ–ã‚’è¡¨ç¤ºã™ã‚‹ã€‚
         TabIndex = tabIndex;
     }
 

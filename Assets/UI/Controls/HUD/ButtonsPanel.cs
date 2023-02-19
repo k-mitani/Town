@@ -24,12 +24,12 @@ public class ButtonsPanel : MonoBehaviour
 
     public void OnClickDeletion()
     {
-        dialogs.Show("Á‹ƒ‚[ƒh");
+        dialogs.Show("æ¶ˆå»ãƒ¢ãƒ¼ãƒ‰");
     }
 
     public void OnClickRange()
     {
-        dialogs.Show("”ÍˆÍƒ‚[ƒh");
+        dialogs.Show("ç¯„å›²ãƒ¢ãƒ¼ãƒ‰");
     }
 
     public void OnClickOptionsMenu()

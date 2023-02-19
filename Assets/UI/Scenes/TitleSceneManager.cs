@@ -21,7 +21,7 @@ public class TitleSceneManager : MonoBehaviour
 
     public void OnClickContinue()
     {
-        dialogs.Show("ƒQ[ƒ€‚ð“Ç‚Ýž‚Ý‚Ü‚·‚©H", DialogButton.YesNo, res =>
+        dialogs.Show("ã‚²ãƒ¼ãƒ ã‚’èª­ã¿è¾¼ã¿ã¾ã™ã‹ï¼Ÿ", DialogButton.YesNo, res =>
         {
             if (res == DialogResult.Yes)
             {
@@ -41,9 +41,9 @@ public class TitleSceneManager : MonoBehaviour
 
     public void OnClickOptions()
     {
-        dialogs.Show("ƒƒbƒZ[ƒWƒeƒXƒg", DialogButton.YesNoCancel, res =>
+        dialogs.Show("ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ†ã‚¹ãƒˆ", DialogButton.YesNoCancel, res =>
         {
-            dialogs.Show("Œ‹‰Ê: " + res);
+            dialogs.Show("çµæžœ: " + res);
         });
     }
 
@@ -57,7 +57,7 @@ public class TitleSceneManager : MonoBehaviour
 
     public void OnClickExitGame()
     {
-        dialogs.Show("ƒQ[ƒ€‚ðI—¹‚µ‚Ü‚·‚©H", DialogButton.YesNo, res =>
+        dialogs.Show("ã‚²ãƒ¼ãƒ ã‚’çµ‚äº†ã—ã¾ã™ã‹ï¼Ÿ", DialogButton.YesNo, res =>
         {
             if (res == DialogResult.Yes)
             {
