@@ -9,6 +9,13 @@ public class MainLifetimeScope : LifetimeScope
         builder.RegisterComponentInHierarchy<Pointer>();
         builder.RegisterComponentInHierarchy<GameManager>();
         builder.RegisterComponentInHierarchy<UIManager>();
+        builder.RegisterComponentInHierarchy<DialogsManager>();
+        builder.RegisterComponentInHierarchy<ButtonsPanel>();
+        builder.RegisterComponentInHierarchy<NotificationPanel>();
+        builder.RegisterComponentInHierarchy<TimePanel>();
+        builder.RegisterComponentInHierarchy<TimerPanel>();
+        builder.RegisterComponentInHierarchy<TopPanel>();
+        builder.RegisterComponentInHierarchy<XPPanel>();
         builder.RegisterEntryPoint<Testing>();
 
 

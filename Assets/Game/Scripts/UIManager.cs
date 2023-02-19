@@ -10,9 +10,6 @@ public class UIManager : MonoBehaviour
 {
     [Inject] GameManager gm;
     [SerializeField] private TextMeshProUGUI timeText;
-    [SerializeField] private TextMeshProUGUI foodText;
-    [SerializeField] private TextMeshProUGUI woodText;
-    [SerializeField] private TextMeshProUGUI metalText;
     
     // Start is called before the first frame update
     void Start()

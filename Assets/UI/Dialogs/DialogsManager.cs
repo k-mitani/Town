@@ -37,4 +37,18 @@ public class DialogsManager : MonoBehaviour
         scenarioList.Show();
     }
 
+    internal void ShowInfoMenu()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void ShowNotificationMenu()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void ShowOptionsMenu()
+    {
+        throw new NotImplementedException();
+    }
 }
