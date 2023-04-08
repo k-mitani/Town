@@ -1,0 +1,9 @@
+.menu-button {
+    font-size: 50px;
+    width: 600px;
+    -unity-text-align: upper-left;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+}

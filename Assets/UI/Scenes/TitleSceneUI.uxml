@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Scenes/TitleSceneStyle.uss?fileID=7433441132597879392&amp;guid=abbf8be19d8963546a6ca3052c9ffa0b&amp;type=3#TitleSceneStyle" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(51, 51, 51); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 32px; padding-right: 32px; padding-top: 32px; padding-bottom: 32px;">
+        <ui:Label tabindex="-1" text="Townsim" display-tooltip-when-elided="true" style="font-size: 120px; color: rgb(255, 192, 0);" />
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); margin-top: 30px;">
+            <ui:Button text="Continue" display-tooltip-when-elided="true" name="Continue" class="menu-button" />
+            <ui:Button text="Load game" display-tooltip-when-elided="true" name="LoadGame" class="menu-button" />
+            <ui:Button text="New game" display-tooltip-when-elided="true" name="NewGame" class="menu-button" />
+            <ui:Button text="Options" display-tooltip-when-elided="true" name="Options" class="menu-button" />
+            <ui:Button text="DLC" display-tooltip-when-elided="true" name="DLC" class="menu-button" />
+            <ui:Button text="Credits" display-tooltip-when-elided="true" name="Credits" class="menu-button" />
+            <ui:Button text="Exit game" display-tooltip-when-elided="true" name="ExitGame" class="menu-button" />
+        </ui:VisualElement>
+        <ui:Label tabindex="-1" text="Ver. 0.0.0" display-tooltip-when-elided="true" name="Version" style="font-size: 40px; color: rgb(159, 159, 159); align-self: auto; position: absolute; bottom: 0; right: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

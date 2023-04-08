@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class TitleSceneManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI version;
     [SerializeField] private DialogsManager dialogs;
+    [SerializeField] private UIDocument uidoc;
 
     void Start()
     {
-        // get version
-        version.text = Application.version;
-        // get program last update time
-        var lastUpdateTime = System.IO.File.GetLastWriteTime(Application.dataPath);
-
-        version.text = $"Ver. {Application.version}";
+        var uiroot = uidoc.rootVisualElement;
+        uiroot.Q<Label>("Version").text = $"Ver. {Application.version}";
+        uiroot.Q<Button>("Continue").clicked += OnClickContinue;
+        uiroot.Q<Button>("LoadGame").clicked += OnClickLoadGame;
+        uiroot.Q<Button>("NewGame").clicked += OnClickNewGame;
+        uiroot.Q<Button>("Options").clicked += OnClickOptions;
+        uiroot.Q<Button>("DLC").clicked += OnClickDlc;
+        uiroot.Q<Button>("Credits").clicked += OnClickCredits;
+        uiroot.Q<Button>("ExitGame").clicked += OnClickExitGame;
     }
 
     public void OnClickContinue()
