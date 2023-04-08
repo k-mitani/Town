@@ -15,4 +15,9 @@ public static class Util
         }
         return children;
     }
+
+    public static T[] GetEnumArray<T>()
+    {
+        return (T[])Enum.GetValues(typeof(T));
+    }
 }

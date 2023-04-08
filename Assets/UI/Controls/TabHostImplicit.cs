@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class TabHostImplicit : MonoBehaviour
 {
+    [SerializeField] private bool forSideBar;
     private Button[] tabButtons;
     private Transform[] tabContents;
     
@@ -33,7 +34,15 @@ public class TabHostImplicit : MonoBehaviour
         // タブボタンを取得する。
         var tabButtonsParent = children.FirstOrDefault(c => c.name.Equals("Tabs"));
         if (tabButtonsParent == null) tabButtonsParent = children[0];
-        tabButtons = tabButtonsParent.GetComponentsInChildren<Button>();
+        if (forSideBar)
+        {
+            var list = Util.GetChildren(tabButtonsParent).FirstOrDefault(c => c.name.Equals("List"));
+            tabButtons = list.GetComponentsInChildren<Button>();
+        }
+        else
+        {
+            tabButtons = tabButtonsParent.GetComponentsInChildren<Button>();
+        }
 
         // タブコンテントを取得する。
         tabContents = children.Except(new[] { tabButtonsParent }).ToArray();

@@ -8,8 +8,8 @@ public class InfoMenuDialog : Dialog
 {
     public void Show(ClosedHandler onClosed = null)
     {
-        //ごみ
         ShowCore(onClosed);
+        gameObject.SetActive(true);
     }
 
     public void Close()

@@ -8,6 +8,7 @@ public class DialogsManager : MonoBehaviour
     [SerializeField] private MessageDialog message;
     [SerializeField] private Transform saveDataList;
     [SerializeField] private ScenarioListDialog scenarioList;
+    [SerializeField] private InfoMenuDialog infoMenu;
     private RectTransform[] dialogs;
 
     private void Start()
@@ -17,6 +18,7 @@ public class DialogsManager : MonoBehaviour
             message.GetComponent<RectTransform>(),
             saveDataList.GetComponent<RectTransform>(),
             scenarioList.GetComponent<RectTransform>(),
+            infoMenu.GetComponent<RectTransform>(),
         };
 
         foreach (var d in dialogs)
@@ -39,7 +41,7 @@ public class DialogsManager : MonoBehaviour
 
     internal void ShowInfoMenu()
     {
-        throw new NotImplementedException();
+        infoMenu.Show();
     }
 
     internal void ShowNotificationMenu()
